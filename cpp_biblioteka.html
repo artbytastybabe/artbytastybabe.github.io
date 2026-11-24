@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a1020">
+<title>C++ Baza Kodów — szkolny pomocnik</title>
+<style>
+:root{color-scheme:dark;--bg:#090e1a;--panel:#121a2b;--panel2:#19233a;--ink:#f3f6ff;--muted:#a8b5d0;--accent:#78a9ff;--line:#2d3a56;--green:#69dbb0}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 90% -10%,#21386a 0,transparent 38%),var(--bg);font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);line-height:1.55}button,input{font:inherit}button{cursor:pointer}.layout{max-width:1200px;margin:auto;padding:36px 20px 80px}header{display:flex;justify-content:space-between;align-items:center;gap:14px} .logo{display:flex;gap:10px;align-items:center;font-weight:800;font-size:21px}.logo b{display:inline-grid;place-items:center;background:linear-gradient(135deg,#4387f7,#8c6df7);width:43px;height:43px;border-radius:12px;font-size:17px}.toplink{color:#cddbf7;text-decoration:none;font-size:13px;border:1px solid var(--line);padding:9px 12px;border-radius:10px}.hero{padding:54px 0 27px}.pill{display:inline-block;color:#a7caff;background:#172b4a;border:1px solid #2d5187;border-radius:999px;font-size:12px;font-weight:700;padding:5px 12px}.hero h1{font-size:clamp(32px,5vw,56px);line-height:1.08;letter-spacing:-1.8px;margin:17px 0 15px}.hero h1 span{color:#8db5ff}.hero p{max-width:650px;color:var(--muted);font-size:16px}.controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:24px 0 17px}.search{border:1px solid var(--line);background:#151e30;border-radius:12px;padding:13px 15px;min-width:250px;flex:1;color:var(--ink);outline:none}.search:focus{border-color:var(--accent);box-shadow:0 0 0 3px #78a9ff22}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{background:#131d31;border:1px solid var(--line);color:#c3d0eb;padding:10px 13px;border-radius:10px;font-size:13px}.filter.active{background:#2a4f91;border-color:#649eff;color:white}.count{color:var(--muted);font-size:13px;margin:5px 0 17px}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.card{border:1px solid var(--line);background:linear-gradient(160deg,#172139,#11192a);border-radius:16px;padding:19px;min-width:0;display:flex;flex-direction:column}.cardtop{display:flex;justify-content:space-between;gap:9px;align-items:start}.num{font-size:12px;color:#93b7fd;font-weight:750;letter-spacing:.3px}.tag{border:1px solid #425477;color:#cbd9f1;padding:3px 9px;font-size:11px;border-radius:999px;white-space:nowrap}.card h2{font-size:19px;letter-spacing:-.4px;margin:8px 0 4px}.card p{color:var(--muted);margin:0 0 16px;font-size:13px;min-height:41px}.codewrap{background:#080f1d;border:1px solid #263653;border-radius:11px;overflow:hidden;flex:1;min-height:160px}.codebar{padding:8px 13px;display:flex;align-items:center;justify-content:space-between;background:#131f34;color:#98abc9;font-size:11px}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#68d6a8;margin-right:6px}pre{margin:0;padding:14px;overflow:auto;max-height:310px;color:#dce9ff;font:12.5px/1.6 Consolas,'Courier New',monospace;tab-size:4;white-space:pre} .actions{display:flex;gap:9px;margin-top:13px}.copy,.download{border:0;background:#76a6ff;color:#07132b;padding:11px 14px;border-radius:9px;font-size:13px;font-weight:800;flex:1}.copy:hover,.download:hover{background:#a5c7ff}.download{background:#243a61;color:#d1e1ff;border:1px solid #345484;flex:0 0 auto}.download:hover{background:#345484}.note{background:#111c31;border:1px solid var(--line);border-radius:15px;margin-top:26px;padding:18px 22px;color:#bfcee8;font-size:14px}.note strong{color:white}.empty{padding:50px;text-align:center;color:#b0bfd8;border:1px dashed var(--line);border-radius:16px}footer{color:#8191b0;font-size:12px;text-align:center;margin-top:37px}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#d4fdec;color:#063d29;border-radius:11px;padding:10px 16px;font-size:13px;font-weight:800;opacity:0;pointer-events:none;transition:opacity .15s}.toast.show{opacity:1}@media(max-width:780px){.cards{grid-template-columns:1fr}.hero{padding-top:36px}.layout{padding:20px 14px 65px}.card{padding:15px}.toplink{display:none}}
+.quicklink{margin:8px 0 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}.quicklink a{background:#2964bf;color:white;padding:12px 17px;border-radius:11px;text-decoration:none;font-weight:750}.quicklink a:hover{background:#3c80df}.quicklink span{color:var(--muted);font-size:13px}</style>
+</head>
+<body><div class="layout"><header><div class="logo"><b>C++</b> Baza Kodów</div><span class="toplink">21 gotowych programów • działa offline</span></header><section class="hero"><div class="pill">✦ INFORMATYKA • 1 KLASA LICEUM</div><h1>Gotowy kod.<br><span>Jedno kliknięcie.</span></h1><p>Wybierz zadanie, skopiuj kod i uruchom go w C++. Każdy przykład jest kompletnym programem, który możesz zmieniać i ćwiczyć.</p></section><div class="quicklink"><a href="https://www.onlinegdb.com/online_c++_compiler" target="_blank" rel="noopener noreferrer">▶ Otwórz OnlineGDB — edytor używany na lekcji ↗</a><span>Wybierz C++, wklej skopiowany kod i kliknij Run.</span></div><div class="controls"><input class="search" id="search" type="search" placeholder="🔎  Szukaj, np. kalkulator, pętla, NWD..." aria-label="Szukaj programów"><div class="filters" id="filters"></div></div><div class="count" id="count"></div><main class="cards" id="cards"></main><div class="note"><strong>Jak korzystać?</strong> Kliknij „Kopiuj kod”, wklej do swojego edytora C++ i uruchom. „Pobierz .cpp” zapisuje sam kod jako plik. Warto wiedzieć, co robią <code>cin</code>, <code>cout</code>, <code>if</code> i <code>for</code> — nauczyciel może poprosić o wyjaśnienie lub zmianę programu. <strong>Ta strona działa też bez internetu.</strong></div><footer>Twoja osobista biblioteka C++ • Wszystkie programy dla C++11 lub nowszego</footer></div><div class="toast" id="toast" role="status">Skopiowano kod!</div>
+<script>
+const data = [
+['Witaj, świecie!','Podstawy','Najprostszy program — wyświetla napis.',`#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Witaj, swiecie!";
+    return 0;
+}`],
+['Wczytaj imię i wiek','Podstawy','Pobieranie danych przez cin i wyświetlanie przez cout.',`#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string imie;
+    int wiek;
+    cout << "Podaj imie: ";
+    cin >> imie;
+    cout << "Podaj wiek: ";
+    cin >> wiek;
+    cout << "Czesc " << imie << "! Masz " << wiek << " lat.\n";
+    return 0;
+}`],
+['Suma dwóch liczb','Matematyka','Wczytaj dwie liczby i oblicz ich sumę.',`#include <iostream>
+using namespace std;
+
+int main() {
+    double a, b;
+    cout << "Podaj a i b: ";
+    cin >> a >> b;
+    cout << "Suma = " << a + b << "\n";
+    return 0;
+}`],
+['Kalkulator + − × ÷','Matematyka','Podstawowe cztery działania z kontrolą dzielenia przez zero.',`#include <iostream>
+using namespace std;
+
+int main() {
+    double a, b;
+    char znak;
+    cout << "Podaj dzialanie, np. 5 + 2: ";
+    cin >> a >> znak >> b;
+    if (znak == '+') cout << a + b;
+    else if (znak == '-') cout << a - b;
+    else if (znak == '*') cout << a * b;
+    else if (znak == '/') {
+        if (b != 0) cout << a / b;
+        else cout << "Nie dziel przez zero!";
+    } else cout << "Nieznany operator";
+    cout << "\n";
+    return 0;
+}`],
+['Pole i obwód prostokąta','Matematyka','Oblicz pole oraz obwód z dwóch boków.',`#include <iostream>
+using namespace std;
+
+int main() {
+    double a, b;
+    cout << "Podaj boki prostokata: ";
+    cin >> a >> b;
+    if (a <= 0 || b <= 0) {
+        cout << "Boki musza byc dodatnie!\n";
+        return 0;
+    }
+    cout << "Pole: " << a * b << "\n";
+    cout << "Obwod: " << 2 * (a + b) << "\n";
+    return 0;
+}`],
+['Pole koła','Matematyka','Oblicz pole koła z podanego promienia.',`#include <iostream>
+using namespace std;
+
+int main() {
+    double r;
+    const double PI = 3.141592653589793;
+    cout << "Podaj promien: ";
+    cin >> r;
+    if (r < 0) cout << "Niepoprawny promien\n";
+    else cout << "Pole = " << PI * r * r << "\n";
+    return 0;
+}`],
+['Czy liczba jest parzysta?','Warunki','Sprawdź resztę z dzielenia przez 2.',`#include <iostream>
+using namespace std;
+
+int main() {
+    int x;
+    cout << "Podaj liczbe: ";
+    cin >> x;
+    if (x % 2 == 0) cout << "Parzysta\n";
+    else cout << "Nieparzysta\n";
+    return 0;
+}`],
+['Większa z dwóch liczb','Warunki','Porównaj wartości i uwzględnij remis.',`#include <iostream>
+using namespace std;
+
+int main() {
+    double a, b;
+    cout << "Podaj 2 liczby: ";
+    cin >> a >> b;
+    if (a > b) cout << "Wieksza: " << a;
+    else if (b > a) cout << "Wieksza: " << b;
+    else cout << "Liczby sa rowne";
+    cout << "\n";
+    return 0;
+}`],
+['Największa z trzech liczb','Warunki','Znajdź maksimum trzech wartości.',`#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, c;
+    cin >> a >> b >> c;
+    int wynik = a;
+    if (b > wynik) wynik = b;
+    if (c > wynik) wynik = c;
+    cout << "Najwieksza: " << wynik << "\n";
+    return 0;
+}`],
+['Ocena z punktów','Warunki','Przykładowe progi ocen: 0–39% = 1, 40–54% = 2 itd.',`#include <iostream>
+using namespace std;
+
+int main() {
+    int p;
+    cout << "Podaj procent (0-100): ";
+    cin >> p;
+    if (p < 0 || p > 100) cout << "Bledny wynik";
+    else if (p < 40) cout << "Ocena 1";
+    else if (p < 55) cout << "Ocena 2";
+    else if (p < 70) cout << "Ocena 3";
+    else if (p < 85) cout << "Ocena 4";
+    else if (p < 95) cout << "Ocena 5";
+    else cout << "Ocena 6";
+    cout << "\n";
+    return 0;
+}`],
+['Liczby od 1 do N','Pętle','Klasyczna pętla for.',`#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Podaj N: ";
+    cin >> n;
+    for (int i = 1; i <= n; i++) {
+        cout << i << " ";
+    }
+    cout << "\n";
+    return 0;
+}`],
+['Tabliczka mnożenia','Pętle','Mnożenie liczby od 1 do 10.',`#include <iostream>
+using namespace std;
+
+int main() {
+    int x;
+    cout << "Podaj liczbe: ";
+    cin >> x;
+    for (int i = 1; i <= 10; i++) {
+        cout << x << " * " << i << " = " << x * i << "\n";
+    }
+    return 0;
+}`],
+['Suma liczb od 1 do N','Pętle','Zliczaj sumę kolejnych liczb.',`#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    long long suma = 0;
+    cout << "Podaj N (>= 0): ";
+    cin >> n;
+    if (n < 0) return 0;
+    for (int i = 1; i <= n; i++) suma += i;
+    cout << "Suma: " << suma << "\n";
+    return 0;
+}`],
+['Silnia liczby','Pętle','Oblicz n! dla n od 0 do 20.',`#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    unsigned long long wynik = 1;
+    cout << "Podaj n (0-20): ";
+    cin >> n;
+    if (n < 0 || n > 20) {
+        cout << "Podaj liczbe od 0 do 20\n";
+        return 0;
+    }
+    for (int i = 2; i <= n; i++) wynik *= i;
+    cout << n << "! = " << wynik << "\n";
+    return 0;
+}`],
+['Liczba pierwsza','Algorytmy','Sprawdź, czy liczba ma dzielniki inne niż 1 i ona sama.',`#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    bool pierwsza = true;
+    cout << "Podaj liczbe: ";
+    cin >> n;
+    if (n < 2) pierwsza = false;
+    for (int i = 2; i <= n / i; i++) {
+        if (n % i == 0) {
+            pierwsza = false;
+            break;
+        }
+    }
+    if (pierwsza) cout << "Pierwsza\n";
+    else cout << "Nie jest pierwsza\n";
+    return 0;
+}`],
+['Liczba pierwsza czy złożona — jak na lekcji','Algorytmy','Wersja zadania ze zdjęcia tablicy: sprawdzanie dzielników pętlą for. Dla liczb mniejszych niż 2 osobny komunikat.',`#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Podaj liczbe naturalna: ";
+    cin >> n;
+
+    if (n < 2) {
+        cout << n << " nie jest ani pierwsza, ani zlozona";
+        return 0;
+    }
+
+    for (int i = 2; i < n; i++) {
+        if (n % i == 0) {
+            cout << n << " jest liczba zlozona";
+            return 0;
+        }
+    }
+
+    cout << n << " jest liczba PIERWSZA!";
+    return 0;
+}`],
+['NWD — algorytm Euklidesa','Algorytmy','Największy wspólny dzielnik dwóch liczb.',`#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+int main() {
+    int a, b;
+    cout << "Podaj dwie liczby: ";
+    cin >> a >> b;
+    a = abs(a);
+    b = abs(b);
+    while (b != 0) {
+        int reszta = a % b;
+        a = b;
+        b = reszta;
+    }
+    cout << "NWD = " << a << "\n";
+    return 0;
+}`],
+['Średnia z N liczb','Tablice','Wczytaj N liczb do tablicy i policz średnią.',`#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Ile liczb? ";
+    cin >> n;
+    if (n <= 0) return 0;
+    vector<double> liczby(n);
+    double suma = 0;
+    for (int i = 0; i < n; i++) {
+        cin >> liczby[i];
+        suma += liczby[i];
+    }
+    cout << "Srednia = " << suma / n << "\n";
+    return 0;
+}`],
+['Minimum i maksimum w tablicy','Tablice','Znajdź najmniejszy i największy element.',`#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Ile liczb? ";
+    cin >> n;
+    if (n <= 0) return 0;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) cin >> a[i];
+    int mn = a[0], mx = a[0];
+    for (int i = 1; i < n; i++) {
+        if (a[i] < mn) mn = a[i];
+        if (a[i] > mx) mx = a[i];
+    }
+    cout << "Min = " << mn << ", Max = " << mx << "\n";
+    return 0;
+}`],
+['Sortowanie rosnące','Tablice','Ułóż podane liczby od najmniejszej do największej.',`#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Ile liczb? ";
+    cin >> n;
+    if (n < 0) return 0;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) cin >> a[i];
+    sort(a.begin(), a.end());
+    for (int x : a) cout << x << " ";
+    cout << "\n";
+    return 0;
+}`],
+['Zgadnij liczbę','Gry','Gra: zgadnij losową liczbę od 1 do 100.',`#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(static_cast<unsigned>(time(nullptr)));
+    int tajna = rand() % 100 + 1;
+    int strzal;
+    cout << "Zgadnij liczbe od 1 do 100!\n";
+    do {
+        cout << "Twoj strzal: ";
+        cin >> strzal;
+        if (!cin) return 0;
+        if (strzal < tajna) cout << "Za malo!\n";
+        else if (strzal > tajna) cout << "Za duzo!\n";
+        else cout << "Brawo!\n";
+    } while (strzal != tajna);
+    return 0;
+}`]
+];
+const categories=['Wszystkie','Podstawy','Matematyka','Warunki','Pętle','Algorytmy','Tablice','Gry'];let active='Wszystkie';
+const search=document.getElementById('search'), cards=document.getElementById('cards'), count=document.getElementById('count'), filters=document.getElementById('filters');
+function escapeHTML(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function render(){const needle=search.value.trim().toLocaleLowerCase('pl');const matched=data.map((x,i)=>({x,i})).filter(({x})=>(active==='Wszystkie'||x[1]===active)&&x.slice(0,3).join(' ').toLocaleLowerCase('pl').includes(needle));count.textContent=`${matched.length} z ${data.length} programów`;cards.innerHTML=matched.length?matched.map(({x,i})=>`<article class="card"><div class="cardtop"><span class="num">PROGRAM #${String(i+1).padStart(2,'0')}</span><span class="tag">${escapeHTML(x[1])}</span></div><h2>${escapeHTML(x[0])}</h2><p>${escapeHTML(x[2])}</p><div class="codewrap"><div class="codebar"><span><i class="dot"></i> main.cpp</span><span>C++</span></div><pre><code>${escapeHTML(x[3])}</code></pre></div><div class="actions"><button class="copy" data-i="${i}">⧉ Kopiuj kod</button><button class="download" data-i="${i}" title="Pobierz plik C++">↓ .cpp</button></div></article>`).join(''):'<div class="empty">Nie znaleziono programu. Spróbuj innego hasła.</div>'}
+filters.innerHTML=categories.map(x=>`<button class="filter${x===active?' active':''}" data-cat="${escapeHTML(x)}">${escapeHTML(x)}</button>`).join('');
+filters.addEventListener('click',e=>{const b=e.target.closest('[data-cat]');if(!b)return;active=b.dataset.cat;document.querySelectorAll('.filter').forEach(el=>el.classList.toggle('active',el===b));render()});search.addEventListener('input',render);
+let toastTimeout;function showToast(message){const t=document.getElementById('toast');t.textContent=message;t.classList.add('show');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>t.classList.remove('show'),1800)}
+async function copyText(s){if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(s);return;}const el=document.createElement('textarea');el.value=s;el.style.position='fixed';el.style.opacity='0';document.body.appendChild(el);el.focus();el.select();const ok=document.execCommand('copy');el.remove();if(!ok)throw Error('Brak dostępu do schowka')}
+cards.addEventListener('click',async e=>{const b=e.target.closest('button[data-i]');if(!b)return;const idx=Number(b.dataset.i),d=data[idx];if(b.classList.contains('copy')){try{await copyText(d[3]);showToast('✓ Skopiowano kod!')}catch{showToast('Nie można skopiować. Zaznacz kod ręcznie.')}}else{const blob=new Blob([d[3]+'\n'],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='program_'+String(idx+1).padStart(2,'0')+'.cpp';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);showToast('✓ Pobrano plik .cpp')}});
+render();
+</script></body></html>
